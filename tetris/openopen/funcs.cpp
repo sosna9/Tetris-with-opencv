@@ -69,7 +69,7 @@ void Basicfunctions::draw(int board[10][20])
 	imshow("Tetris", image);
 }
 
-void Basicfunctions::draw(int pX, int pY, int pPiece, int pRotation, int board[10][20])
+void Basicfunctions::drawpiece(int pX, int pY, int pPiece, int pRotation, int board[10][20])
 {
 	Mat image = Mat::zeros(600, 450, CV_8UC3);
 	for (int i = 0; i < 10; i++)
@@ -90,7 +90,7 @@ void Basicfunctions::draw(int pX, int pY, int pPiece, int pRotation, int board[1
 		{
 			if (piecefunctions.GetBlockType(pPiece, pRotation, j, i) != 0)
 			{
-				if(pY+j>=0) rectangle(image, Point(20 + 25 * (pX+i), 80 + 25 * (pY+j) ), Point(20 + 25 * (pX+i) + 19, 80 + 25 * (pY+j) + 19), Scalar(255, 20, 147), 1, 1);
+				rectangle(image, Point(20 + 25 * (pX+i), 80 + 25 * (pY+j) ), Point(20 + 25 * (pX+i) + 19, 80 + 25 * (pY+j) + 19), Scalar(255, 20, 147), 1, 1);
 			}
 		}
 	}

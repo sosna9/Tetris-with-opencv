@@ -12,5 +12,5 @@ public:
 	void showtestscreen(void);
 	int GetRand(int pA, int pB);
 	void draw(int[10][20]);
-	void draw(int pX, int pY, int pPiece, int pRotation, int board[10][20]);
+	void drawpiece(int pX, int pY, int pPiece, int pRotation, int board[10][20]);
 };

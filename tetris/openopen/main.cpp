@@ -16,38 +16,39 @@ int main()
 	int field[10][20] = { 0 }; 
 	Basicfunctions start;
 	Game game;
+	Pieces mPieces;
+	Move move;
 	start.startscreen();
 	game.initboard();
 	printf("test\n");
 	int key;
-	//start.draw();
+	//start.drawpiece();
 	game.initgame();
 	while (true) //pêtla gry
 	{
 		//start.showtestscreen();
-		start.draw(game.xposition, game.yposition, game.piece, game.rotation, game.board);
+		start.drawpiece(game.mPosX, game.yposition, game.piece, game.rotation, game.mBoard);
 		key = waitKey(550);
-		//move.keyboardinput(key, game.xposition, game.mPosY, game.piece, game.mRotation, game.board);
-		//move.keyboardinput(key, game.xposition, gamemPosY, game.piece, int& mRotation)
+		//move.keyboardinput(key, game.mPosX, game.mPosY, game.piece, game.mRotation, game.mBoard);
 		switch (key)
 		{
 		case ('d'):
 		{
-			if (game.checkcollision(game.xposition + 1, game.yposition, game.piece, game.rotation))
-				game.xposition++;
+			if (game.checkcollision(game.mPosX + 1, game.yposition, game.piece, game.rotation))
+				game.mPosX++;
 			break;
 		}
 
 		case ('a'):
 		{
-			if (game.checkcollision(game.xposition - 1, game.yposition, game.piece, game.rotation))
-				game.xposition--;
+			if (game.checkcollision(game.mPosX - 1, game.yposition, game.piece, game.rotation))
+				game.mPosX--;
 			break;
 		}
 
 		case ('s'):
 		{
-			if (game.checkcollision(game.xposition, game.yposition + 1, game.piece, game.rotation))
+			if (game.checkcollision(game.mPosX, game.yposition + 1, game.piece, game.rotation))
 				game.yposition++;
 			break;
 		}
@@ -55,20 +56,20 @@ int main()
 
 		case ('w'):
 		{
-			if (game.checkcollision(game.xposition, game.yposition, game.piece, (game.rotation + 1) % 4))
+			if (game.checkcollision(game.mPosX, game.yposition, game.piece, (game.rotation + 1) % 4))
 				game.rotation = (game.rotation + 1) % 4;
 
 			break;
 		}
 		case (27):exit(0);
 		}
-		if (game.checkcollision(game.xposition, game.yposition + 1, game.piece, game.rotation))
+		if (game.checkcollision(game.mPosX, game.yposition + 1, game.piece, game.rotation))
 		{
 			game.yposition++;
 		}
 		else
 		{
-			game.storepiece(game.xposition, game.yposition, game.piece, game.rotation);
+			game.storepiece(game.mPosX, game.yposition, game.piece, game.rotation);
 
 			game.deletepossiblelines();
 
@@ -77,7 +78,7 @@ int main()
 				exit(0);
 			}
 
-			game.createnewshape();
+			game.CreateNewPiece();
 		}
 		
 	}

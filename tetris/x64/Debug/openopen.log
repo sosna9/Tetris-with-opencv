@@ -1,7 +1,21 @@
 ﻿  Game.cpp
+  funcs.cpp
+C:\Users\Pinetree\source\repos\openopen\openopen\funcs.cpp(32,50): warning C4244: "argument": konwersja z "double" do "_Tp", możliwa utrata danych
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\Pinetree\source\repos\openopen\openopen\funcs.cpp(33,70): warning C4244: "argument": konwersja z "double" do "_Tp", możliwa utrata danych
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\Pinetree\source\repos\openopen\openopen\funcs.cpp(44,73): warning C4244: "argument": konwersja z "double" do "_Tp", możliwa utrata danych
+          with
+          [
+              _Tp=int
+          ]
   main.cpp
-C:\Users\Pinetree\source\repos\openopen\openopen\main.cpp(20,7): warning C4101: "move": lokalna zmienna, do której nie istnieje odwołanie
-C:\Users\Pinetree\source\repos\openopen\openopen\main.cpp(19,9): warning C4101: "mPieces": lokalna zmienna, do której nie istnieje odwołanie
   move.cpp
   Generowanie kodu...
   openopen.vcxproj -> C:\Users\Pinetree\source\repos\openopen\x64\Debug\openopen.exe
